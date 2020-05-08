@@ -10,10 +10,8 @@
 # The year must be greater than or equal to EARLIEST_YEAR
 
 class Date:
-    
     EARLIEST_YEAR = 1999
-    
-    
+
     # Constructor initializes the state of new
     # Date objects as they are created by client code.
     # Raises a ValueError if values are out of range.
@@ -21,16 +19,16 @@ class Date:
         self.month = month
         self.day = day
         self.year = year
-        
+
     # Returns a string representation of a Date, such as "9/19".
     def __str__(self):
         return str(self._day) + "/" + str(self._month) + "/" + str(self._year)
-    
+
     # Compares two Date objects.
     def __eq__(self, otherDate):
-        if isinstance(otherDate, Date) :
+        if isinstance(otherDate, Date):
             return self.day == otherDate.day and self.month == otherDate.month \
-                         and self.year == otherDate.year
+                   and self.year == otherDate.year
         else:
             raise TypeError("Argument must be a Date object.")
 
@@ -42,7 +40,7 @@ class Date:
 
     @month.setter
     def month(self, value):
-        if value >= 1 and value <= 12:
+        if 1 <= value <= 12:
             self._month = value
         else:
             raise ValueError("Invalid month: " + str(value))
@@ -55,7 +53,7 @@ class Date:
 
     @day.setter
     def day(self, value):
-        if value >= 1 and value <= self.days_in_month():
+        if 1 <= value <= self.days_in_month():
             self._day = value
         else:
             raise ValueError("Invalid day: " + str(value))

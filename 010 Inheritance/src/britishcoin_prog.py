@@ -14,9 +14,9 @@ def main():
     
     theBritishCoin = BritishCoin()
 
-    selection = 'a';
+    selection = 'a'
     while selection != 'q':
-        print("\nq\tType: ")
+        print("\tType: ")
         print("\t\tf - to flip the coin")
         print("\t\tq - to quit\n")
 

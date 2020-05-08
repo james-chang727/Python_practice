@@ -3,19 +3,19 @@
 
 from date_module import Date
 
-## An employee has a name and a start date. 
+
+## An employee has a name and a start date.
 #
 class Employee:
-    
+
     ## Constructs an Employee with a name and start date.
     #  @param employee_name the name of the employee.
     #  @param start_date the date the employee started their employment
     #
-    def __init__(self, employee_name="No name", day = 1, month = 1,
-                 year = 2000) :
-            self.name = employee_name
-            self.date = Date(day, month, year)
-            
+    def __init__(self, employee_name="No name", day=1, month=1, year=2000):
+        self.name = employee_name
+        self.date = Date(day, month, year)
+
     ##    
     # @return string representation of object.
     #
@@ -28,29 +28,26 @@ class Employee:
     @property
     def name(self):
         return self._name
-    
+
     @name.setter
     def name(self, theName):
         if len(theName.strip()) != 0:
             self._name = theName
         else:
             raise ValueError("Invalid name: " + name)
-        
+
     ## Determines if this employee is equal to another employee.
     #  @param otherEmployee the employee inside the brackets.
     #  @return True if the names and the start dates are equal.
     #  @exception TypeError if the objects being compared are not
     #             the same type or the object being compared is empty.
     #            
-    def __eq__(self, otherEmployee) :
-        if otherEmployee is None or not isinstance(otherEmployee, Employee) :
+    def __eq__(self, otherEmployee):
+        if otherEmployee is None or not isinstance(otherEmployee, Employee):
             raise TypeError("Argument must be an Employee object and cannot be null.")
-        else :
+        else:
             return (self.name == otherEmployee.name and
-              self.date == otherEmployee.date)
-            
-
-
+                    self.date == otherEmployee.date)
 
 # def main() :
 #     # a simple main function to test this class
@@ -67,4 +64,4 @@ class Employee:
 #     print("equal.")
 # 
 # if __name__ == '__main__':
-#     main()         
+#     main()
