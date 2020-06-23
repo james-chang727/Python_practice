@@ -5,12 +5,13 @@ for i in range(2, q1+1):
     while q1 % i == 0:
         q1 /= i
         count += 1
-        if count > 1:
-            print(f'{i}^{count}', end='')
-            if q1 != 1:
-                print('*', end='')
+        if q1 % i != 0:
+            if count > 1:
+                print(f'{i}^{count}', end='')
+                if q1 != 1:
+                    print('*', end='')
 
-        elif q1 % i != 0:
-            print(f'{i}', end='')
-            if q1 != 1:
-                print('*', end='')
+            else:
+                print(f'{i}', end='')
+                if q1 != 1:
+                    print('*', end='')
